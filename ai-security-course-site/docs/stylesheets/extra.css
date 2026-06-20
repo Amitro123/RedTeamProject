@@ -1,32 +1,70 @@
-/* ===== AI Security course — brand tuning ===== */
-:root {
-  --md-primary-fg-color:        #028090; /* teal */
-  --md-accent-fg-color:         #F0544F; /* red */
+/* ===== AI Security course — dark "cyber" brand ===== */
+/* palette: bg #0F1420 · panel #1B2233 · text #EAEEF6 · muted #9AA7BC
+   red (attack/accent) #F0544F · teal (links/defense) #2DD4BF · gold #F3C24B */
+
+/* ---- LIGHT scheme (primary: custom) ---- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #028090;
+  --md-primary-fg-color--light: #02a0a0;
+  --md-primary-fg-color--dark:  #016b78;
+  --md-accent-fg-color:         #028090;
+  --md-typeset-a-color:         #028090;
 }
+
+/* ---- DARK "cyber" scheme (default) ---- */
 [data-md-color-scheme="slate"] {
-  --md-default-bg-color:        #0F1420;
-  --md-default-fg-color:        #EAEEF6;
-  --md-code-bg-color:           #1B2233;
+  --md-default-bg-color:          #0F1420;
+  --md-default-bg-color--light:   #161d2b;
+  --md-default-bg-color--lighter: #1B2233;
+  --md-default-fg-color:          #EAEEF6;
+  --md-default-fg-color--light:   #C7D0DE;
+  --md-default-fg-color--lighter: #9AA7BC;
+  --md-default-fg-color--lightest:#6B7689;
+
+  /* dark header + footer (like the HTML), teal as the interactive accent */
+  --md-primary-fg-color:        #0F1420;
+  --md-primary-fg-color--light: #1B2233;
+  --md-primary-fg-color--dark:  #0B0F18;
+  --md-accent-fg-color:         #2DD4BF;
   --md-typeset-a-color:         #2DD4BF;
+
+  --md-code-bg-color:           #1B2233;
+  --md-code-fg-color:           #EAEEF6;
+  --md-footer-bg-color:         #0B0F18;
 }
 
-/* Attack = red, Defense = teal accent bars on admonitions */
-.md-typeset .admonition.attack,
-.md-typeset details.attack { border-color: #F0544F; }
-.md-typeset .attack > .admonition-title,
-.md-typeset .attack > summary { background-color: rgba(240,84,79,.1); }
+/* thin red+teal stripe under the header (the HTML motif) */
+[data-md-color-scheme="slate"] .md-header {
+  border-bottom: 3px solid #F0544F;
+  box-shadow: 0 3px 0 0 #2DD4BF;
+}
 
-.md-typeset .admonition.defense,
-.md-typeset details.defense { border-color: #2DD4BF; }
-.md-typeset .defense > .admonition-title,
-.md-typeset .defense > summary { background-color: rgba(45,212,191,.1); }
+/* panels: admonitions, cards, code on dark */
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details,
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  background-color: #161d2b;
+  border-color: #2E3850;
+}
 
-/* Keep code blocks LTR even on RTL pages */
+/* attack = red, defense = teal accent admonitions */
+.md-typeset .admonition.attack, .md-typeset details.attack { border-left-color: #F0544F; }
+.md-typeset .admonition.defense, .md-typeset details.defense { border-left-color: #2DD4BF; }
+/* built-in danger=red, success=teal already align with the motif */
+[data-md-color-scheme="slate"] .md-typeset .admonition.success,
+[data-md-color-scheme="slate"] .md-typeset details.success { border-left-color: #2DD4BF; }
+[data-md-color-scheme="slate"] .md-typeset .admonition.danger,
+[data-md-color-scheme="slate"] .md-typeset details.danger { border-left-color: #F0544F; }
+
+/* keep code blocks LTR on RTL pages */
 .md-typeset pre, .md-typeset code { direction: ltr; unicode-bidi: isolate; text-align: left; }
 
-/* Module hero badges */
+/* track badges + tab labels */
 .track-a { color:#2DD4BF; font-weight:700; }
 .track-b { color:#5B9BD5; font-weight:700; }
+[data-md-color-scheme="slate"] .md-typeset .tabbed-labels > label { color: #9AA7BC; }
+[data-md-color-scheme="slate"] .md-typeset .tabbed-labels > label:hover { color: #EAEEF6; }
 
-/* Homepage cards grid */
-.grid.cards > ul > li { border-radius: 12px; }
+/* homepage cards */
+.grid.cards > ul > li { border-radius: 12px; border-color: #2E3850; }
+[data-md-color-scheme="slate"] .grid.cards > ul > li:hover { border-color: #2DD4BF; }

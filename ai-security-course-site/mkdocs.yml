@@ -27,17 +27,16 @@ theme:
     - content.code.copy     # copy button on code blocks
     - content.tabs.link     # link Track A/B tabs across the page
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: teal
-      accent: red
+    # Dark "cyber" theme is the DEFAULT (first entry). Light is opt-in via toggle.
+    - scheme: slate
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: עבור למצב בהיר
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal
-      accent: red
+    - scheme: default
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: עבור למצב כהה
@@ -94,14 +93,23 @@ nav:
   - מעבדות:
       - labs/index.md
       - "Lab 4 · Agents": labs/lab-04-agents.md
+  - מדיה: media.md
   - חומרי עזר:
       - "OWASP LLM Top 10": reference/owasp-llm-top-10.md
       - "MITRE ATLAS": reference/mitre-atlas.md
       - "Metrics & CI Gates": reference/metrics-ci-gates.md
+      - "Diagrams": reference/diagrams.md
       - "Glossary": reference/glossary.md
   - Case Studies:
       - case-studies/index.md
       - "EchoLeak (CVE-2025-32711)": case-studies/echoleak.md
+      - "Agentjacking": case-studies/agentjacking.md
+      - "AutoJack": case-studies/autojack.md
+      - "SearchLeak (CVE-2026-42824)": case-studies/searchleak.md
+      - "LangGraph RCE Chain": case-studies/langgraph.md
+      - "LiteLLM (CVSS 9.9)": case-studies/litellm.md
+      - "JetBrains Plugins": case-studies/jetbrains-plugins.md
+      - "Orphaned AI Agents": case-studies/orphaned-agents.md
 
 extra:
   social:

@@ -58,6 +58,7 @@ flowchart LR
 -   __ארכיטקט?__ קפוץ ל-[מודול 4 · Agents & Tool/MCP](modules/module-04.md)
 -   __מנהל?__ קרא את העדשה הניהולית (Track A) בכל מודול
 -   __רוצה לתרגל?__ פתח את [המעבדות](labs/index.md)
+-   __מעדיף להאזין?__ [פודקאסט ו-Blueprint](media.md)
 
 </div>
 
