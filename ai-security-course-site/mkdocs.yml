@@ -1,0 +1,109 @@
+site_name: AI Security for Solutions Architects
+site_description: קורס מודולרי לאבטחת מערכות LLM וסוכנים — OWASP LLM Top 10, MITRE ATLAS, ולולאת attack→measure→harden→detect.
+site_author: Amit Rosen
+site_url: https://amitro123.github.io/RedTeamProject/
+
+repo_name: Amitro123/RedTeamProject
+repo_url: https://github.com/Amitro123/RedTeamProject
+edit_uri: edit/main/ai-security-course-site/docs/
+
+# Authoring templates live in the repo as source, but are excluded from the build.
+exclude_docs: |
+  _TEMPLATE.md
+
+theme:
+  name: material
+  language: he            # RTL UI + Hebrew strings (content is Hebrew-dominant)
+  features:
+    - navigation.tabs       # top-level sections as tabs
+    - navigation.sections   # group pages in the sidebar
+    - navigation.top        # back-to-top button
+    - navigation.indexes    # section landing pages
+    - navigation.footer     # prev/next
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy     # copy button on code blocks
+    - content.tabs.link     # link Track A/B tabs across the page
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: עבור למצב בהיר
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: עבור למצב כהה
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang:
+        - he
+        - en
+
+markdown_extensions:
+  - admonition                # callouts: !!! note / warning / tip
+  - pymdownx.details          # collapsible callouts
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid       # native mermaid diagrams
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true   # Track A / Track B as tabs
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - בית: index.md
+  - מודולים:
+      - modules/index.md
+      - "0 · Foundations": modules/module-00.md
+      - "1 · Measurement": modules/module-01.md
+      - "2 · Injection & Jailbreaking": modules/module-02.md
+      - "3 · Secrets & Leakage": modules/module-03.md
+      - "4 · Agents & Tool/MCP": modules/module-04.md
+      - "5 · RAG, Poisoning & Memory": modules/module-05.md
+      - "6 · Governance & Scale": modules/module-06.md
+      - "7 · Detection & Response": modules/module-07.md
+  - מעבדות:
+      - labs/index.md
+      - "Lab 4 · Agents": labs/lab-04-agents.md
+  - חומרי עזר:
+      - "OWASP LLM Top 10": reference/owasp-llm-top-10.md
+      - "MITRE ATLAS": reference/mitre-atlas.md
+      - "Metrics & CI Gates": reference/metrics-ci-gates.md
+      - "Glossary": reference/glossary.md
+  - Case Studies:
+      - case-studies/index.md
+      - "EchoLeak (CVE-2025-32711)": case-studies/echoleak.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Amitro123/RedTeamProject

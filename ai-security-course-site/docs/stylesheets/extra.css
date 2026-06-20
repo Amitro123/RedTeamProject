@@ -1,0 +1,32 @@
+/* ===== AI Security course — brand tuning ===== */
+:root {
+  --md-primary-fg-color:        #028090; /* teal */
+  --md-accent-fg-color:         #F0544F; /* red */
+}
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:        #0F1420;
+  --md-default-fg-color:        #EAEEF6;
+  --md-code-bg-color:           #1B2233;
+  --md-typeset-a-color:         #2DD4BF;
+}
+
+/* Attack = red, Defense = teal accent bars on admonitions */
+.md-typeset .admonition.attack,
+.md-typeset details.attack { border-color: #F0544F; }
+.md-typeset .attack > .admonition-title,
+.md-typeset .attack > summary { background-color: rgba(240,84,79,.1); }
+
+.md-typeset .admonition.defense,
+.md-typeset details.defense { border-color: #2DD4BF; }
+.md-typeset .defense > .admonition-title,
+.md-typeset .defense > summary { background-color: rgba(45,212,191,.1); }
+
+/* Keep code blocks LTR even on RTL pages */
+.md-typeset pre, .md-typeset code { direction: ltr; unicode-bidi: isolate; text-align: left; }
+
+/* Module hero badges */
+.track-a { color:#2DD4BF; font-weight:700; }
+.track-b { color:#5B9BD5; font-weight:700; }
+
+/* Homepage cards grid */
+.grid.cards > ul > li { border-radius: 12px; }
